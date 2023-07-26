@@ -42,16 +42,12 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
     ChatState();
 
     const fetchStatus = (userid, isOnline) => {
-    console.log(selectedChat, "select");
+    //console.log(selectedChat, "select");
     if (!selectedChat) {
       return;
     }
-    console.log(userid, "jea");
-    console.log(getsenderid(user, selectedChat.users), "HELLO");
-    console.log("hello");
     if (!selectedChat.isGroupChat) {
       if (userid === getsenderid(user, selectedChat.users)) {
-        console.log("dhfus");
         setOnline(isOnline); // Update the state variable `Online` with the correct value
       }
     }
@@ -141,7 +137,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
 
   useEffect(() => {
     fetchMessages();
-    console.log(selectedChat);
+  
     socket.on("userStatusUpdate", ({userid, isOnline}) =>{
       // console.log(userid,isOnline)
        fetchStatus(userid,isOnline)});

@@ -16,7 +16,6 @@ const getUserNotifications = async (userId) => {
 const addNotification = async ( content,userid,chatid) => {
   try {
     const newNotification = new Notification({message:content, user:userid,chat:chatid});
-    console.log(newNotification);
     await newNotification.save();
   } catch (error) {
     console.error('Failed to add notification:', error);

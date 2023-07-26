@@ -109,7 +109,7 @@ function SideDrawer() {
   };
 
   const accessChat = async (userId) => {
-    console.log(userId);
+    
 
     try {
       setLoadingChat(true);
@@ -140,7 +140,7 @@ function SideDrawer() {
 const handlefunction = async (chatId,notid) => {
   try {
     const response = await axios.get(`${BACKEND_URL}/api/chat/${chatId}`);
-   console.log(response.data)
+
    setSelectedChat(response.data)
 await axios.delete(`${BACKEND_URL}/api/notifications/${notid}`);
 

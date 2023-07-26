@@ -126,12 +126,11 @@ const Signup = () => {
      data
    )
     .then((response) => {
-      console.log(response);
       setPic(response.data.secure_url);
       setPicLoading(false);
     })
     .catch((error) => {
-      console.log(error);
+    
       setPicLoading(false);
     });
     } else {
